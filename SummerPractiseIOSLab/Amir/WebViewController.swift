@@ -1,9 +1,9 @@
 //
-//  WebKitViewController.swift
-//  tabbedAppPract
+//  WebViewController.swift
+//  SummerPractiseIOSLab
 //
-//  Created by Amir on 01/04/2019.
-//  Copyright © 2019 Amir. All rights reserved.
+//  Created by Amir on 09/04/2019.
+//  Copyright © 2019 itisIOSLab. All rights reserved.
 //
 
 import UIKit
@@ -16,16 +16,20 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        self.view.addSubview(webView)
+        
+        configureWebView()
+    }
+    
+    fileprivate func configureWebView() {
         let url = URL(string: model.URL)
         webView.load(URLRequest(url: url!))
         self.navigationItem.title = model.title
-        
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         self.navigationController?.toolbar.isHidden = true
         toolbarItems = [refresh]
         navigationController?.isToolbarHidden = false
     }
+    
 }
+

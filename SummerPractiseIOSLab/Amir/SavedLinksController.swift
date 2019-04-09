@@ -1,24 +1,26 @@
 //
-//  SecondTableViewController.swift
-//  tabbedAppPract
+//  SavedLinksController.swift
+//  SummerPractiseIOSLab
 //
-//  Created by Amir on 29/03/2019.
-//  Copyright © 2019 Amir. All rights reserved.
+//  Created by Amir on 09/04/2019.
+//  Copyright © 2019 itisIOSLab. All rights reserved.
 //
 
 import UIKit
 
 class SavedLinksController: UITableViewController {
     
-    var linksArray: [SavedLinks] = [SavedLinks](repeating: SavedLinks(title: "Ex", URL: "asdf"), count: 1)
+    var linksArray: [SavedLinks] = [SavedLinks]()
     var filteredLinks = [SavedLinks]()
     
+    let searchController = UISearchController(searchResultsController: nil)
     var searchBarIsEmpty: Bool{
         guard let text = searchController.searchBar.text else {
             return false
         }
         return text.isEmpty
     }
+    
     var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
@@ -31,14 +33,7 @@ class SavedLinksController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = editButtonItem
-        
-        // Search setup
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Поиск по названию"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        
+        searchSetup()
     }
     
     // MARK: - Table view data source
@@ -53,11 +48,9 @@ class SavedLinksController: UITableViewController {
         } else {
             return linksArray.count
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         var filteredLink: SavedLinks
         
         if isFiltering {
@@ -65,7 +58,6 @@ class SavedLinksController: UITableViewController {
         } else {
             filteredLink = (linksArray[indexPath.row])
         }
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LinksTableViewCell
         cell.configureCell(with: filteredLink)
         
@@ -89,9 +81,9 @@ class SavedLinksController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        
         linksArray.swapAt(fromIndexPath.row, to.row)
         tableView.moveRow(at: fromIndexPath, to: to)
+        
         saveData()
     }
     
@@ -102,7 +94,6 @@ class SavedLinksController: UITableViewController {
     // MARK: - Add & search
     
     @IBAction func addBtnAction(_ sender: Any) {
-        
         if UIPasteboard.general.string == nil {
             let alertWhenPasteboardIsNil = UIAlertController(title: "Буфер обмена пуст!", message: "Пожалуйста, скопируйте ссылку, которую хотите сохранить", preferredStyle: .alert)
             let dismissBtn = UIAlertAction(title: "Я все понял", style: .destructive, handler: nil)
@@ -122,41 +113,39 @@ class SavedLinksController: UITableViewController {
         
         let addBtn = UIAlertAction(title: "Добавить", style: .default) { (add) in
             let newTitle = alert.textFields?.first?.text
-            
             self.linksArray.append(SavedLinks(title: newTitle!, URL: alert.message!))
-            
             self.tableView.insertRows(at: [IndexPath(row: self.linksArray.count - 1, section: 0)], with: .fade)
             self.tableView.reloadData()
+            
             self.saveData()
-            for links in self.linksArray {
-                print(" Title: \(links.title) URL: \(links.URL)")
-            }
         }
-        
         let cancelBtn = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
         alert.addAction(addBtn)
         alert.addAction(cancelBtn)
-        
         alert.addTextField { (textField) in
             textField.placeholder = "Введите название: "
         }
         
         self.present(alert, animated: true, completion: nil)
-        
-        
     }
     
-    let searchController = UISearchController(searchResultsController: nil)
+    // MARK: - Search by title
+    
+    fileprivate func searchSetup() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск по названию"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
     
     // MARK: - Navigation
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let model = SavedLinks(title: linksArray[indexPath.row].title, URL: linksArray[indexPath.row].URL)
-        
         performSegue(withIdentifier: "segueId", sender: model)
-        
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -165,20 +154,24 @@ class SavedLinksController: UITableViewController {
             destination.model = model
         }
     }
+    
     // MARK: - UserDefaults
+    
     var defaults = UserDefaults.standard
     func saveData() {
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: linksArray, requiringSecureCoding: false) {
             defaults.set(savedData, forKey: "links")
         }
     }
+    
     func loadData() {
         if let savedLinks = defaults.object(forKey: "links") as? Data {
             if let decodedLinks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedLinks) as? [SavedLinks] {
-                linksArray = decodedLinks
+                linksArray = decodedLinks!
             }
         }
     }
+    
 }
 
 extension SavedLinksController: UISearchResultsUpdating {
@@ -186,7 +179,6 @@ extension SavedLinksController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         searchContent(searchController.searchBar.text!)
     }
-    
     private func searchContent(_ searchText: String) {
         filteredLinks = linksArray.filter({ (links: SavedLinks) -> Bool in
             return links.title.lowercased().contains(searchText.lowercased())

@@ -1,15 +1,15 @@
 //
 //  SavedLinksModel.swift
-//  tabbedAppPract
+//  SummerPractiseIOSLab
 //
-//  Created by Amir on 02/04/2019.
-//  Copyright © 2019 Amir. All rights reserved.
+//  Created by Amir on 09/04/2019.
+//  Copyright © 2019 itisIOSLab. All rights reserved.
 //
 
 import Foundation
 
 class SavedLinks: NSObject, NSCoding {
-
+    
     var title = String()
     var URL = String()
     
@@ -28,5 +28,4 @@ class SavedLinks: NSObject, NSCoding {
         aCoder.encode(URL, forKey:"URL")
     }
 }
-
 
