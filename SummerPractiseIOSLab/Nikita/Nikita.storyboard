@@ -62,7 +62,7 @@
         <!--Game View-->
         <scene sceneID="MpQ-Bo-VAM">
             <objects>
-                <viewController id="PXU-49-ASI" customClass="GameView" customModule="SummerPractiseIOSLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="PXU-49-ASI" customClass="GameView" customModule="SummerPractiseIOSLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ZK-a2-SYX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
