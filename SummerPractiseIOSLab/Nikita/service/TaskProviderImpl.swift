@@ -27,6 +27,7 @@ class TaskProviderImpl : ITaskProvider {
         
         task1.options = ["func", "class", "Int", "override"]
         task1.answer = [0,2]
+        task1.reward = 2
         storage.append(task1)
     }
     

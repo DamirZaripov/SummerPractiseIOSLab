@@ -92,7 +92,7 @@ class GameView: UIViewController {
             button.setTitleColor(UIColor.green, for: .normal)
         case 1:
             score += 1
-            timeLimit += 5.0
+            timeLimit += (currentTask?.reward!)!
             
             currentTask = taskProvider?.getTask()
             drawUIForCurrentTask()
