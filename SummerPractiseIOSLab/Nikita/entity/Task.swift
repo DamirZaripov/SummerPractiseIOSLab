@@ -12,7 +12,7 @@ class Task {
     var text: String?
     var answer: [Int]?
     var options: [String]?
-    var reward: Float?
+    var reward: Int?
     
     private var iterator = 0
     
