@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class GameView: UIViewController {
     var timeLimit: Float = 10 //seconds
@@ -93,6 +94,12 @@ class GameView: UIViewController {
         case 1:
             score += 1
             timeLimit += (currentTask?.reward!)!
+            let banner = NotificationBanner(title: "Верный ответ!", subtitle: "+\(currentTask!.reward!) с.", style: .success)
+            banner.bannerHeight = 50.0
+            banner.duration = 1.5
+            banner.show(queuePosition: .front, bannerPosition: .bottom)
+            banner.bannerQueue.removeAll()
+
             
             currentTask = taskProvider?.getTask()
             drawUIForCurrentTask()
@@ -119,6 +126,18 @@ class GameView: UIViewController {
     }
     
     private func endGame() {
+        let banner = NotificationBanner(title: "Game Over", subtitle: "score: \(score)", style: .danger)
+        banner.bannerHeight = 50.0
+        banner.duration = 1.5
+        banner.show(queuePosition: .front, bannerPosition: .bottom)
+        banner.bannerQueue.removeAll()
+
+        
+        answerButton1.isEnabled = false
+        answerButton2.isEnabled = false
+        answerButton3.isEnabled = false
+        answerButton4.isEnabled = false
+
         let currentHighScore = UserDefaults.standard.object(forKey: "highscore") as? Int ?? 0
         
         if score > currentHighScore {
@@ -126,7 +145,7 @@ class GameView: UIViewController {
         }
         timer?.invalidate()
         progressBar.progress = 1
-        progressBar.progressTintColor = UIColor.red
+        progressBar.progressTintColor = UIColor(red: 0.96, green: 0.26, blue: 0.26, alpha: 1)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.navigationController?.popViewController(animated: true)
         }
