@@ -14,7 +14,8 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
     var filteredLinks = [SavedLinks]()
     
     let searchController = UISearchController(searchResultsController: nil)
-    var searchBarIsEmpty: Bool{
+    
+    var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else {
             return false
         }
@@ -81,7 +82,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         }
         let edit = UITableViewRowAction(style: .normal, title: "Изменить") { (action, indexPath) in
             
-            let alert = UIAlertController(title: "Редактирование ссылки: ", message: self.linksArray[indexPath.row].URL, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Редактирование заголовка для ссылки: ", message: self.linksArray[indexPath.row].URL, preferredStyle: .alert)
             
             let changeBtn = UIAlertAction(title: "Изменить", style: .default) { (add) in
                 let newTitle = alert.textFields?.first?.text
@@ -93,7 +94,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
             alert.addAction(changeBtn)
             alert.addAction(cancelBtn)
             alert.addTextField { (textField) in
-                textField.placeholder = "Введите название: "
+                textField.placeholder = "Введите новое название: "
             }
             self.present(alert, animated: true, completion: nil)
         }
@@ -115,9 +116,16 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Add & search
     
+    func isURL(value: String?) -> Bool {
+        guard let urlString = value, let url = URL(string: urlString) else {
+            return false
+        }
+        return UIApplication.shared.canOpenURL(url)
+    }
+    
     @IBAction func addBtnAction(_ sender: Any) {
-        if UIPasteboard.general.string == nil {
-            let alertWhenPasteboardIsNil = UIAlertController(title: "Буфер обмена пуст!", message: "Пожалуйста, скопируйте ссылку, которую хотите сохранить", preferredStyle: .alert)
+        if UIPasteboard.general.string == nil || !isURL(value: UIPasteboard.general.string) {
+            let alertWhenPasteboardIsNil = UIAlertController(title: "Буфер обмена не содержит URL адрес!", message: "Пожалуйста, убедитесь, что вы правильно скопировали URL адрес сайта", preferredStyle: .alert)
             let dismissBtn = UIAlertAction(title: "Я все понял", style: .destructive, handler: nil)
             alertWhenPasteboardIsNil.addAction(dismissBtn)
             self.present(alertWhenPasteboardIsNil, animated: true, completion: nil)
@@ -125,6 +133,8 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
             alertConfigure()
         }
     }
+    
+    
     
     fileprivate func alertConfigure() {
         
@@ -141,15 +151,17 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
             self.tableView.reloadData()
             self.saveData()
         }
+        
         let cancelBtn = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
         alert.addTextField { (textField) in
             textField.placeholder = "Введите название: "
         }
-        addBtn.isEnabled = true
+        
         alert.addAction(addBtn)
         alert.addAction(cancelBtn)
         
         self.present(alert, animated: true, completion: nil)
+        
     }
     
     // MARK: - Search by title
