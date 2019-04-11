@@ -90,22 +90,22 @@ class GameView: UIViewController {
         
         switch resultOfAction {
         case 0:
-            button.setTitleColor(UIColor.green, for: .normal)
+            button.setTitleColor(UIColor(red: 0.26, green: 0.96, blue: 0.6, alpha: 1), for: .normal)
         case 1:
             score += 1
-            timeLimit += (currentTask?.reward!)!
+            timeLimit += Float((currentTask?.reward!)!)
+            
             let banner = NotificationBanner(title: "Верный ответ!", subtitle: "+\(currentTask!.reward!) с.", style: .success)
             banner.bannerHeight = 50.0
             banner.duration = 1.5
             banner.show(queuePosition: .front, bannerPosition: .bottom)
             banner.bannerQueue.removeAll()
 
-            
             currentTask = taskProvider?.getTask()
             drawUIForCurrentTask()
             
         default:
-            button.setTitleColor(UIColor.red, for: .normal)
+            button.setTitleColor(UIColor(red: 0.96, green: 0.26, blue: 0.26, alpha: 1), for: .normal)
             endGame()
         }
         
@@ -138,7 +138,7 @@ class GameView: UIViewController {
         answerButton3.isEnabled = false
         answerButton4.isEnabled = false
 
-        let currentHighScore = UserDefaults.standard.object(forKey: "highscore") as? Int ?? 0
+        let currentHighScore = UserDefaults.standard.integer(forKey: "highscore")
         
         if score > currentHighScore {
             UserDefaults.standard.set(score, forKey: "highscore")
