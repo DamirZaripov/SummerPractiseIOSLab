@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SavedLinksController: UITableViewController {
+class SavedLinksController: UITableViewController, UITextFieldDelegate {
     
     var linksArray: [SavedLinks] = [SavedLinks]()
     var filteredLinks = [SavedLinks]()
@@ -72,18 +72,40 @@ class SavedLinksController: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            linksArray.remove(at: indexPath.row)
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Удалить") { (action, indexPath) in
+            self.linksArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            saveData()
+            self.saveData()
         }
+        let edit = UITableViewRowAction(style: .normal, title: "Изменить") { (action, indexPath) in
+            
+            let alert = UIAlertController(title: "Редактирование ссылки: ", message: self.linksArray[indexPath.row].URL, preferredStyle: .alert)
+            
+            let changeBtn = UIAlertAction(title: "Изменить", style: .default) { (add) in
+                let newTitle = alert.textFields?.first?.text
+                self.linksArray[indexPath.row].title = newTitle!
+                self.tableView.reloadData()
+                self.saveData()
+            }
+            let cancelBtn = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
+            alert.addAction(changeBtn)
+            alert.addAction(cancelBtn)
+            alert.addTextField { (textField) in
+                textField.placeholder = "Введите название: "
+            }
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        edit.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.7960784314, alpha: 1)
+        
+        return [delete, edit]
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         linksArray.swapAt(fromIndexPath.row, to.row)
         tableView.moveRow(at: fromIndexPath, to: to)
-        
         saveData()
     }
     
@@ -109,6 +131,7 @@ class SavedLinksController: UITableViewController {
         let pasteboard = UIPasteboard.general
         let messageText = pasteboard.string
         
+        
         let alert = UIAlertController(title: "Добавить новую ссылку", message: messageText, preferredStyle: .alert)
         
         let addBtn = UIAlertAction(title: "Добавить", style: .default) { (add) in
@@ -116,15 +139,15 @@ class SavedLinksController: UITableViewController {
             self.linksArray.append(SavedLinks(title: newTitle!, URL: alert.message!))
             self.tableView.insertRows(at: [IndexPath(row: self.linksArray.count - 1, section: 0)], with: .fade)
             self.tableView.reloadData()
-            
             self.saveData()
         }
         let cancelBtn = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
-        alert.addAction(addBtn)
-        alert.addAction(cancelBtn)
         alert.addTextField { (textField) in
             textField.placeholder = "Введите название: "
         }
+        addBtn.isEnabled = true
+        alert.addAction(addBtn)
+        alert.addAction(cancelBtn)
         
         self.present(alert, animated: true, completion: nil)
     }
