@@ -24,7 +24,7 @@ class TaskProviderImpl : ITaskProvider {
     
     func fill() {
         let task1 = Task()
-        task1.text = "   ____ a(a: Int, b:Int) -> ___ {           return a+b   }  "
+        task1.text = "   ____ a(a: Int, b:Int) -> ____ {           return a+b   }  "
         
         task1.options = ["func", "class", "Int", "override"]
         task1.answer = [0,2]
@@ -32,7 +32,7 @@ class TaskProviderImpl : ITaskProvider {
         storage.append(task1)
 
         let task2 = Task()
-        task2.text = "___ myDict = [\n    \"firstKey\":\"firstValue\"\n]\nfor (key, ____) in myDict {\n    print(\"\\(key) = \\(value)\")\n}"
+        task2.text = "____ myDict = [\n    \"firstKey\":\"firstValue\"\n]\nfor (key, ____) in myDict {\n    print(\"\\(key) = \\(value)\")\n}"
         task2.options = ["key", "value", "var", "func"]
         task2.answer = [2, 1]
         task2.reward = 3
@@ -76,7 +76,7 @@ class TaskProviderImpl : ITaskProvider {
         storage.append(task7)
         
         let task8 = Task()
-        task8.text = "func printAll(items: String...) {\n    ___ item in ____ {\n        print(____)\n    }\n}"
+        task8.text = "func printAll(items: String...) {\n    ____ item in ____ {\n        print(____)\n    }\n}"
         task8.options = ["print","for","item", "items"]
         task8.answer = [1,3,2]
         task8.reward = 5
