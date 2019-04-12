@@ -28,6 +28,9 @@ class GameView: UIViewController {
     @IBOutlet weak var answerButton3: UIButton!
     @IBOutlet weak var answerButton4: UIButton!
     
+    @IBAction func exitButton(_ sender: UIButton) {
+        endGameImmediately()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -141,12 +144,9 @@ class GameView: UIViewController {
         answerButton2.isEnabled = false
         answerButton3.isEnabled = false
         answerButton4.isEnabled = false
-
-        let currentHighScore = UserDefaults.standard.integer(forKey: "highscore")
         
-        if score > currentHighScore {
-            UserDefaults.standard.set(score, forKey: "highscore")
-        }
+        trySaveHighScore()
+
         timer?.invalidate()
         progressBar.progress = 1
         progressBar.progressTintColor = UIColor(red: 0.96, green: 0.26, blue: 0.26, alpha: 1)
@@ -154,6 +154,27 @@ class GameView: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
         
+    }
+    
+    private func trySaveHighScore() {
+        let currentHighScore = UserDefaults.standard.integer(forKey: "highscore")
+        
+        if score > currentHighScore {
+            UserDefaults.standard.set(score, forKey: "highscore")
+        }
+    }
+    
+    private func endGameImmediately() {
+        let banner = NotificationBanner(title: "Game Over", subtitle: "score: \(score)", style: .danger)
+        banner.bannerHeight = 50.0
+        banner.duration = 1.5
+        banner.show(queuePosition: .front, bannerPosition: .bottom)
+        banner.bannerQueue.removeAll()
+        
+        trySaveHighScore()
+        
+        timer?.invalidate()
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func updateTimer() {
