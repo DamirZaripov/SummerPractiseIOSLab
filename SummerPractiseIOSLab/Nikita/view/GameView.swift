@@ -90,7 +90,11 @@ class GameView: UIViewController {
         
         switch resultOfAction {
         case 0:
+            var taskText = currentTask?.text!
             button.setTitleColor(UIColor(red: 0.26, green: 0.96, blue: 0.6, alpha: 1), for: .normal)
+            taskText = taskText?.stringByReplacingFirstOccurrenceOfString(target: "____", withString: (button.titleLabel?.text!)!)
+            currentTask?.text = taskText
+            taskTextLabel.text = taskText
         case 1:
             score += 1
             timeLimit += Float((currentTask?.reward!)!)
