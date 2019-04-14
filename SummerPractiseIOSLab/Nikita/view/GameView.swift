@@ -35,23 +35,6 @@ class GameView: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func firstButtonPress(_ sender: UIButton) {
-        handleButtonPressed(button: sender)
-    }
-    
-    @IBAction func secondButtonPress(_ sender: UIButton) {
-        handleButtonPressed(button: sender)
-    }
-    
-    @IBAction func thirdButtonPress(_ sender: UIButton) {
-        handleButtonPressed(button: sender)
-
-    }
-    
-    @IBAction func fourthButtonPress(_ sender: UIButton) {
-        handleButtonPressed(button: sender)
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,9 +57,9 @@ class GameView: UIViewController {
         drawUIForCurrentTask()
     }
     
-    private func handleButtonPressed(button: UIButton) {
+    @IBAction private func handleButtonPressed(_ sender: UIButton) {
         var id: Int {
-            switch button {
+            switch sender {
             case answerButton1:
                 return 0
             case answerButton2:
@@ -94,8 +77,8 @@ class GameView: UIViewController {
         switch resultOfAction {
         case 0:
             var taskText = currentTask.text!
-            button.setTitleColor(UIColor(red: 0.26, green: 0.96, blue: 0.6, alpha: 1), for: .normal)
-            taskText = taskText.stringByReplacingFirstOccurrenceOfString(target: String(repeating: "_", count: (button.titleLabel?.text!.count)!), withString: (button.titleLabel?.text!)!)
+            sender.setTitleColor(UIColor(red: 0.26, green: 0.96, blue: 0.6, alpha: 1), for: .normal)
+            taskText = taskText.stringByReplacingFirstOccurrenceOfString(target: String(repeating: "_", count: (sender.titleLabel?.text!.count)!), withString: (sender.titleLabel?.text!)!)
             currentTask.text = taskText
             taskTextLabel.text = taskText
         case 1:
@@ -112,7 +95,7 @@ class GameView: UIViewController {
             drawUIForCurrentTask()
             
         default:
-            button.setTitleColor(UIColor(red: 0.96, green: 0.26, blue: 0.26, alpha: 1), for: .normal)
+            sender.setTitleColor(UIColor(red: 0.96, green: 0.26, blue: 0.26, alpha: 1), for: .normal)
             endGame()
         }
         
