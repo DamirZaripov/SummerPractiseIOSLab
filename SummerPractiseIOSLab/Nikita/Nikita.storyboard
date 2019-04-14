@@ -84,7 +84,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="thirdButtonPress:" destination="PXU-49-ASI" eventType="touchUpInside" id="Ic9-Cn-jPv"/>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="B4z-PL-k8i"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGq-GY-1kg">
@@ -100,7 +100,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="secondButtonPress:" destination="PXU-49-ASI" eventType="touchUpInside" id="w8u-hH-Tra"/>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="Y3a-Ju-tk6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etE-RW-pqa">
@@ -116,7 +116,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="firstButtonPress:" destination="PXU-49-ASI" eventType="touchUpInside" id="cfj-nJ-Qjm"/>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="aKg-NU-7rm"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="Le1-YM-TEO" customClass="CustomProgressView" customModule="SummerPractiseIOSLab" customModuleProvider="target">
@@ -139,7 +139,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="fourthButtonPress:" destination="PXU-49-ASI" eventType="touchUpInside" id="MZA-Dh-csm"/>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="BTh-a1-S49"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Времени осталось:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhW-xO-KIv">
