@@ -13,8 +13,8 @@ class GameView: UIViewController {
     var timeLimit: Float = 10 //seconds
     var initialTime: Float? = nil
     var timer: Timer?
-    var currentTask: Task?
-    var taskProvider: ITaskProvider?
+    var currentTask: Task!
+    var taskProvider: ITaskProvider!
     var score = 0
     
 
@@ -70,7 +70,7 @@ class GameView: UIViewController {
     
     private func startGame() {
         timer = Timer.scheduledTimer(timeInterval: 0.0333334, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
-        currentTask = taskProvider!.getTask()
+        currentTask = taskProvider.getTask()
         drawUIForCurrentTask()
     }
     
@@ -89,26 +89,26 @@ class GameView: UIViewController {
                 return 4
             }
         }
-        let resultOfAction = currentTask!.tryAdvance(option: id)
+        let resultOfAction = currentTask.tryAdvance(option: id)
         
         switch resultOfAction {
         case 0:
-            var taskText = currentTask?.text!
+            var taskText = currentTask.text!
             button.setTitleColor(UIColor(red: 0.26, green: 0.96, blue: 0.6, alpha: 1), for: .normal)
-            taskText = taskText?.stringByReplacingFirstOccurrenceOfString(target: "____", withString: (button.titleLabel?.text!)!)
-            currentTask?.text = taskText
+            taskText = taskText.stringByReplacingFirstOccurrenceOfString(target: String(repeating: "_", count: (button.titleLabel?.text!.count)!), withString: (button.titleLabel?.text!)!)
+            currentTask.text = taskText
             taskTextLabel.text = taskText
         case 1:
             score += 1
-            timeLimit += Float((currentTask?.reward!)!)
+            timeLimit += Float(currentTask.reward!)
             
-            let banner = NotificationBanner(title: "Верный ответ!", subtitle: "+\(currentTask!.reward!) с.", style: .success)
+            let banner = NotificationBanner(title: "Верный ответ!", subtitle: "+\(currentTask.reward!) с.", style: .success)
             banner.bannerHeight = 50.0
             banner.duration = 1.5
             banner.show(queuePosition: .front, bannerPosition: .bottom)
             banner.bannerQueue.removeAll()
 
-            currentTask = taskProvider?.getTask()
+            currentTask = taskProvider.getTask()
             drawUIForCurrentTask()
             
         default:
@@ -129,7 +129,7 @@ class GameView: UIViewController {
         answerButton3.setTitle(currentTask?.options![2], for: .normal)
         answerButton4.setTitle(currentTask?.options![3], for: .normal)
         
-        taskTextLabel.text = currentTask?.text
+        taskTextLabel.text = currentTask.text
     }
     
     private func endGame() {
