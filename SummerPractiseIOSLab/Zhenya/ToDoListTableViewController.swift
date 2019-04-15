@@ -15,11 +15,6 @@ class ToDoListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -30,12 +25,10 @@ class ToDoListTableViewController: UITableViewController {
         return sections.count
     }
     
-    //  How many cells
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks[section].count
     }
 
-    // Cell constructing
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoTableCell", for: indexPath)
         cell.textLabel?.numberOfLines = 0
@@ -88,83 +81,14 @@ class ToDoListTableViewController: UITableViewController {
             
             self.present(alert, animated: true, completion: nil)
             
-            
-            
-//            var neededString = tasks[0].remove(at: indexPath.row)
-//            tasks[1].append(neededString)
-//            tableView.reloadData()
-        
         } else {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
-//    func createAlert (title:String, message:String) -> Bool
-//    {
-//
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-//
-//        //CREATING ON BUTTON
-//        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
-//            alert.dismiss(animated: true, completion: nil)
-//            var isYes = true
-//            return isYes
-//        }))
-//
-//        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { (action) in
-//            alert.dismiss(animated: true, completion: nil)
-//            var isYes = false
-//            return isYes
-//        }))
-//
-//        self.present(alert, animated: true, completion: nil)
-//
-//    }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none
-//        {
-////            var neededStrig = tasks.remove(at: indexPath.row)
-////            tasks.insert(neededStrig, at: tasks.count)
-//
-//
-//            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-//            tableView.reloadData()
-//        } //else
-////        {
-////            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-////        }
-//    }
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-
-    
-//    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-//            var neededStrig = tasks.remove(at: fromIndexPath.row)
-//            tasks.insert(neededStrig, at: tasks.count)
-//    }
-    
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
+        footerView.backgroundColor = UIColor.black
+        return footerView
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
