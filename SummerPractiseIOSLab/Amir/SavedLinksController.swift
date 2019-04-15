@@ -82,21 +82,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         }
         let edit = UITableViewRowAction(style: .normal, title: "Изменить") { (action, indexPath) in
             
-            let alert = UIAlertController(title: "Редактирование заголовка для ссылки: ", message: self.linksArray[indexPath.row].URL, preferredStyle: .alert)
-            
-            let changeBtn = UIAlertAction(title: "Изменить", style: .default) { (add) in
-                let newTitle = alert.textFields?.first?.text
-                self.linksArray[indexPath.row].title = newTitle!
-                self.tableView.reloadData()
-                self.saveData()
-            }
-            let cancelBtn = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
-            alert.addAction(changeBtn)
-            alert.addAction(cancelBtn)
-            alert.addTextField { (textField) in
-                textField.placeholder = "Введите новое название: "
-            }
-            self.present(alert, animated: true, completion: nil)
+            self.editingAlert(indexPath)
         }
         
         edit.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.7960784314, alpha: 1)
@@ -114,8 +100,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
-    // MARK: - Add & search
-    
+    // MARK: - Add
     func isURL(value: String?) -> Bool {
         guard let urlString = value, let url = URL(string: urlString) else {
             return false
@@ -125,24 +110,25 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func addBtnAction(_ sender: Any) {
         if UIPasteboard.general.string == nil || !isURL(value: UIPasteboard.general.string) {
-            let alertWhenPasteboardIsNil = UIAlertController(title: "Буфер обмена не содержит URL адрес!", message: "Пожалуйста, убедитесь, что вы правильно скопировали URL адрес сайта", preferredStyle: .alert)
-            let dismissBtn = UIAlertAction(title: "Я все понял", style: .destructive, handler: nil)
-            alertWhenPasteboardIsNil.addAction(dismissBtn)
-            self.present(alertWhenPasteboardIsNil, animated: true, completion: nil)
+            warningAlert()
         } else {
-            alertConfigure()
+            addingNewLinkAlert()
         }
     }
     
     
-    
-    fileprivate func alertConfigure() {
-        
+    // MARK: - Alerts
+    fileprivate func addingNewLinkAlert() {
         let pasteboard = UIPasteboard.general
         let messageText = pasteboard.string
         
-        
         let alert = UIAlertController(title: "Добавить новую ссылку", message: messageText, preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Название"
+            textField.delegate = self
+            textField.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
+        }
         
         let addBtn = UIAlertAction(title: "Добавить", style: .default) { (add) in
             let newTitle = alert.textFields?.first?.text
@@ -152,13 +138,41 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
             self.saveData()
         }
         
-        let cancelBtn = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
+        alert.addAction(UIAlertAction(title: "Отмеить", style: .cancel, handler: nil))
+        alert.addAction(addBtn)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    fileprivate func warningAlert() {
+        let alertWhenPasteboardIsNil = UIAlertController(title: "Буфер обмена не содержит URL адрес!", message: "Пожалуйста, убедитесь, что вы правильно скопировали URL адрес сайта", preferredStyle: .alert)
+        let dismissBtn = UIAlertAction(title: "Я все понял", style: .destructive, handler: nil)
+        alertWhenPasteboardIsNil.addAction(dismissBtn)
+        self.present(alertWhenPasteboardIsNil, animated: true, completion: nil)
+    }
+    
+    
+    
+    fileprivate func editingAlert(_ indexPath: IndexPath) {
+        
+        let alert = UIAlertController(title: "Редактирование заголовка для ссылки: ", message: self.linksArray[indexPath.row].URL, preferredStyle: .alert)
+        
         alert.addTextField { (textField) in
-            textField.placeholder = "Введите название: "
+            textField.placeholder = "Новое название"
+            textField.text = self.linksArray[indexPath.row].title
+            textField.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
         }
         
-        alert.addAction(addBtn)
-        alert.addAction(cancelBtn)
+        let changeBtn = UIAlertAction(title: "Изменить", style: .default) { (change) in
+            let newTitle = alert.textFields?.first?.text
+            self.linksArray[indexPath.row].title = newTitle!
+            self.tableView.reloadData()
+            self.saveData()
+        }
+        
+        alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: nil))
+        alert.addAction(changeBtn)
         
         self.present(alert, animated: true, completion: nil)
         
@@ -191,7 +205,6 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
     }
     
     // MARK: - UserDefaults
-    
     var defaults = UserDefaults.standard
     func saveData() {
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: linksArray, requiringSecureCoding: false) {
@@ -206,7 +219,18 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
             }
         }
     }
+}
+
+extension UIAlertController {
+    func isValidTitle(_ title: String) -> Bool {
+        return title.count > 0
+    }
     
+    @objc func textDidChangeInLoginAlert() {
+        if let text = textFields?.first?.text, let action = actions.last {
+            action.isEnabled = isValidTitle(text)
+        }
+    }
 }
 
 extension SavedLinksController: UISearchResultsUpdating {
