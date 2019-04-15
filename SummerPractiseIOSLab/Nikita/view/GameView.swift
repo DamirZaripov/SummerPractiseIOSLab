@@ -83,7 +83,14 @@ class GameView: UIViewController {
             taskTextLabel.text = taskText
         case 1:
             score += 1
-            timeLimit += Float(currentTask.reward!)
+            if let reward = currentTask.reward {
+                if (timeLimit+Float(reward) < initialTime!) {
+                    timeLimit += Float(reward)
+                }
+                else {
+                    timeLimit = initialTime!
+                }
+            }
             
             let banner = NotificationBanner(title: "Верный ответ!", subtitle: "+\(currentTask.reward!) с.", style: .success)
             banner.bannerHeight = 50.0
