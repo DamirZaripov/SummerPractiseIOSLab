@@ -10,7 +10,7 @@ import UIKit
 import NotificationBannerSwift
 
 class GameView: UIViewController {
-    var timeLimit: Float = 10 //seconds
+    var timeLimit: Float = 20 //seconds
     var initialTime: Float? = nil
     var timer: Timer?
     var currentTask: Task!
