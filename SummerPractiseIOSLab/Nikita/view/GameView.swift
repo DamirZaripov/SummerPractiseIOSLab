@@ -10,13 +10,13 @@ import UIKit
 import NotificationBannerSwift
 
 class GameView: UIViewController {
-    var timeLimit: Float = 20 //seconds
+    var timeLimit: Float = 10 //seconds
     var initialTime: Float? = nil
     var timer: Timer?
     var currentTask: Task!
     var taskProvider: ITaskProvider!
     var score = 0
-    
+    var endedManually: Bool = true
 
     @IBOutlet weak var progressBar: CustomProgressView!
     
@@ -28,31 +28,24 @@ class GameView: UIViewController {
     @IBOutlet weak var answerButton3: UIButton!
     @IBOutlet weak var answerButton4: UIButton!
     
-    @IBAction func exitButton(_ sender: UIButton) {
-        endGameImmediately()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if endedManually {
+            endGameImmediately()
+        }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         taskProvider = TaskProviderImpl()
         initialTime = timeLimit
         
-        answerButton1.setTitle("", for: .normal)
-        answerButton2.setTitle("", for: .normal)
-        answerButton3.setTitle("", for: .normal)
-        answerButton4.setTitle("", for: .normal)
-        taskTextLabel.text = ""
-        
         progressBar.progress = 1.0
         startGame()
     }
     
     private func startGame() {
-        timer = Timer.scheduledTimer(timeInterval: 0.0333334, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.0333334/2, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
         currentTask = taskProvider.getTask()
         drawUIForCurrentTask()
     }
@@ -123,6 +116,7 @@ class GameView: UIViewController {
     }
     
     private func endGame() {
+        endedManually = false
         let banner = NotificationBanner(title: "Game Over", subtitle: "score: \(score)", style: .danger)
         banner.bannerHeight = 50.0
         banner.duration = 1.5
@@ -172,7 +166,7 @@ class GameView: UIViewController {
             endGame()
         }
         else {
-            timeLimit -= 0.0333334
+            timeLimit -= 0.0333334/2
             progressBar.progress = timeLimit/initialTime!
         }
     }
