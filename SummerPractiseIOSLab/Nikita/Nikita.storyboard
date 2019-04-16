@@ -212,7 +212,7 @@ print(i)
                         <color key="tintColor" white="0.25089183790000003" alpha="0.72265625" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="0.25089183790000003" alpha="0.72265625" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.19772938070821922" alpha="0.7481003852739726" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
