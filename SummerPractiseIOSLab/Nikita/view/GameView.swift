@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NotificationBannerSwift
 
 class GameView: UIViewController {
     var timeLimit: Float = 10 //seconds
