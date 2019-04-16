@@ -8,12 +8,13 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController {
+class AddTaskViewController: UIViewController, UITextFieldDelegate {
 
     var name : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        taskName.delegate = self
     }
     @IBOutlet weak var taskName: UITextField!
     
@@ -21,5 +22,15 @@ class AddTaskViewController: UIViewController {
         if segue.identifier == "doneSegue" {
             name = taskName.text!
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
+    func textFieldShouldReturn(_ taskName: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }
