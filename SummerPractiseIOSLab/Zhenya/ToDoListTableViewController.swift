@@ -9,8 +9,8 @@
 import UIKit
 
 class ToDoListTableViewController: UITableViewController {
-    var sections = ["To Do List", "Completed"]
-    var tasks = [["Some task"],["Some ended task"]]
+    var sections = UserDefaults.standard.stringArray(forKey: "ToDoSetcionsArray") ?? ["To Do List", "Completed"]
+    var tasks = UserDefaults.standard.array(forKey: "ToDoTasksArray") as? [[String]] ?? [[],[]]
     var newTask : String = ""
 
     override func viewDidLoad() {
@@ -47,14 +47,18 @@ class ToDoListTableViewController: UITableViewController {
         newTask = taskAddTaskVC.name
         if (newTask != ""){
         tasks[0].append(newTask)
+            UserDefaults.standard.set(self.tasks, forKey: "ToDoTasksArray")
+            UserDefaults.standard.synchronize()
+            tableView.reloadData()
         }
-        tableView.reloadData()
     }
 
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tasks[indexPath.section].remove(at: indexPath.row)
+            UserDefaults.standard.set(self.tasks, forKey: "ToDoTasksArray")
+            UserDefaults.standard.synchronize()
             tableView.reloadData()
         }
     }
@@ -70,6 +74,8 @@ class ToDoListTableViewController: UITableViewController {
                 alert.dismiss(animated: true, completion: nil)
                 var neededString = self.tasks[0].remove(at: indexPath.row)
                 self.tasks[1].append(neededString)
+                UserDefaults.standard.set(self.tasks, forKey: "ToDoTasksArray")
+                UserDefaults.standard.synchronize()
                 tableView.reloadData()
         
             }))
