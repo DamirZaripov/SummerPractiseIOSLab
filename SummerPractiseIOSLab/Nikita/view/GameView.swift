@@ -84,12 +84,8 @@ class GameView: UIViewController {
                     timeLimit = initialTime!
                 }
             }
-            
-            let banner = NotificationBanner(title: "Верный ответ!", subtitle: "+\(currentTask.reward!) с.", style: .success)
-            banner.bannerHeight = 50.0
-            banner.duration = 1.5
-            banner.show(queuePosition: .front, bannerPosition: .bottom)
-            banner.bannerQueue.removeAll()
+
+            BannerPresenter.showTimeIncreaseBanner(time: currentTask.reward!)
 
             currentTask = taskProvider.getTask()
             drawUIForCurrentTask()
@@ -117,11 +113,7 @@ class GameView: UIViewController {
     
     private func endGame() {
         endedManually = false
-        let banner = NotificationBanner(title: "Game Over", subtitle: "score: \(score)", style: .danger)
-        banner.bannerHeight = 50.0
-        banner.duration = 1.5
-        banner.show(queuePosition: .front, bannerPosition: .bottom)
-        banner.bannerQueue.removeAll()
+        BannerPresenter.showEndGameBanner(score: score)
 
         
         answerButton1.isEnabled = false
@@ -149,11 +141,7 @@ class GameView: UIViewController {
     }
     
     private func endGameImmediately() {
-        let banner = NotificationBanner(title: "Game Over", subtitle: "score: \(score)", style: .danger)
-        banner.bannerHeight = 50.0
-        banner.duration = 1.5
-        banner.show(queuePosition: .front, bannerPosition: .bottom)
-        banner.bannerQueue.removeAll()
+        BannerPresenter.showEndGameBanner(score: score)
         
         trySaveHighScore()
         
