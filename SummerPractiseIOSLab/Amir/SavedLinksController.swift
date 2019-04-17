@@ -138,8 +138,9 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
             self.saveData()
         }
         
-        alert.addAction(UIAlertAction(title: "Отмеить", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: nil))
         alert.addAction(addBtn)
+        addBtn.isEnabled = false
         
         self.present(alert, animated: true, completion: nil)
         
@@ -173,6 +174,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         
         alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: nil))
         alert.addAction(changeBtn)
+        changeBtn.isEnabled = false
         
         self.present(alert, animated: true, completion: nil)
         
@@ -221,9 +223,14 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
     }
 }
 
+// MARK: - Extensions
+
 extension UIAlertController {
     func isValidTitle(_ title: String) -> Bool {
-        return title.count > 0
+        let regex = "[A-Za-z0-9]"
+        let textTest = NSPredicate(format: "SELF MATCHES %@", regex)
+        let result = textTest.evaluate(with: title)
+        return result
     }
     
     @objc func textDidChangeInLoginAlert() {
