@@ -12,9 +12,11 @@ class ToDoListTableViewController: UITableViewController {
     var sections = UserDefaults.standard.stringArray(forKey: "ToDoSetcionsArray") ?? ["To Do List", "Completed"]
     var tasks = UserDefaults.standard.array(forKey: "ToDoTasksArray") as? [[String]] ?? [[],[]]
     var newTask : String = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -33,8 +35,11 @@ class ToDoListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoTableCell", for: indexPath)
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.textLabel?.text = tasks[indexPath.section][indexPath.row]
-        
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: tasks[indexPath.section][indexPath.row])
+        if indexPath.section == 1 {
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+        }
+        cell.textLabel?.attributedText = attributeString
         return cell
     }
     
@@ -93,8 +98,25 @@ class ToDoListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
-        footerView.backgroundColor = UIColor.black
+        if tasks[section].count == 0 {
+       let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
+        footerView.backgroundColor = UIColor.white
+        let label = UILabel()
+        label.text = "empty"
+        label.textColor = UIColor.lightGray
+            label.frame = CGRect(x: 165, y: 0, width: footerView.frame.size.width, height: footerView.frame.size.height)
+        footerView.addSubview(label)
         return footerView
+        }
+        else {
+            let footerView = UIView()
+            return footerView
+        }
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if tasks[section] != [] {
+            return 0
+        }
+        return 40
     }
 }
