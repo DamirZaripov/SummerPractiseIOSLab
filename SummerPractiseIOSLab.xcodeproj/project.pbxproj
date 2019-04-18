@@ -17,6 +17,7 @@
 		263A8B87225BAA4400C4B1FE /* Amir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B86225BAA4400C4B1FE /* Amir.storyboard */; };
 		263A8B8A225BAA5A00C4B1FE /* Alsu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */; };
 		263A8B8D225BACF500C4B1FE /* Albert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B8C225BACF500C4B1FE /* Albert.storyboard */; };
+		2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2956D17A2268FEAA0062C5F3 /* Extensions.swift */; };
 		29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E81367225CF277002A9ABD /* LinksTableViewCell.swift */; };
 		29E8136A225CF2A2002A9ABD /* SavedLinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E81369225CF2A2002A9ABD /* SavedLinksModel.swift */; };
 		29E8136C225CF2D0002A9ABD /* SavedLinksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */; };
@@ -36,6 +37,7 @@
 		263A8B86225BAA4400C4B1FE /* Amir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amir.storyboard; sourceTree = "<group>"; };
 		263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alsu.storyboard; sourceTree = "<group>"; };
 		263A8B8C225BACF500C4B1FE /* Albert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Albert.storyboard; sourceTree = "<group>"; };
+		2956D17A2268FEAA0062C5F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		29E81367225CF277002A9ABD /* LinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
 		29E81369225CF2A2002A9ABD /* SavedLinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksModel.swift; sourceTree = "<group>"; };
 		29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */,
 				29E8136D225CF2FA002A9ABD /* WebViewController.swift */,
 				29E81367225CF277002A9ABD /* LinksTableViewCell.swift */,
+				2956D17A2268FEAA0062C5F3 /* Extensions.swift */,
 			);
 			path = Amir;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				29E8136C225CF2D0002A9ABD /* SavedLinksController.swift in Sources */,
 				263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */,
 				29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */,
+				2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

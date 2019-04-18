@@ -81,7 +81,6 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
             self.saveData()
         }
         let edit = UITableViewRowAction(style: .normal, title: "Изменить") { (action, indexPath) in
-            
             self.editingAlert(indexPath)
         }
         
@@ -116,7 +115,6 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    
     // MARK: - Alerts
     fileprivate func addingNewLinkAlert() {
         let pasteboard = UIPasteboard.general
@@ -127,7 +125,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         alert.addTextField { (textField) in
             textField.placeholder = "Название"
             textField.delegate = self
-            textField.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
+            textField.addTarget(alert, action: #selector(alert.textDidChangeInAlert), for: .editingChanged)
         }
         
         let addBtn = UIAlertAction(title: "Добавить", style: .default) { (add) in
@@ -153,8 +151,6 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         self.present(alertWhenPasteboardIsNil, animated: true, completion: nil)
     }
     
-    
-    
     fileprivate func editingAlert(_ indexPath: IndexPath) {
         
         let alert = UIAlertController(title: "Редактирование заголовка для ссылки: ", message: self.linksArray[indexPath.row].URL, preferredStyle: .alert)
@@ -162,7 +158,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         alert.addTextField { (textField) in
             textField.placeholder = "Новое название"
             textField.text = self.linksArray[indexPath.row].title
-            textField.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
+            textField.addTarget(alert, action: #selector(alert.textDidChangeInAlert), for: .editingChanged)
         }
         
         let changeBtn = UIAlertAction(title: "Изменить", style: .default) { (change) in
@@ -206,7 +202,8 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - UserDefaults
+    //MARK: - UserDefaults
+    
     var defaults = UserDefaults.standard
     func saveData() {
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: linksArray, requiringSecureCoding: false) {
@@ -220,35 +217,5 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
                 linksArray = decodedLinks!
             }
         }
-    }
-}
-
-// MARK: - Extensions
-
-extension UIAlertController {
-    func isValidTitle(_ title: String) -> Bool {
-        let regex = "[A-Za-z0-9]"
-        let textTest = NSPredicate(format: "SELF MATCHES %@", regex)
-        let result = textTest.evaluate(with: title)
-        return result
-    }
-    
-    @objc func textDidChangeInLoginAlert() {
-        if let text = textFields?.first?.text, let action = actions.last {
-            action.isEnabled = isValidTitle(text)
-        }
-    }
-}
-
-extension SavedLinksController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        searchContent(searchController.searchBar.text!)
-    }
-    private func searchContent(_ searchText: String) {
-        filteredLinks = linksArray.filter({ (links: SavedLinks) -> Bool in
-            return links.title.lowercased().contains(searchText.lowercased())
-        })
-        tableView.reloadData()
     }
 }
