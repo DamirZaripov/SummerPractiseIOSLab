@@ -9,13 +9,15 @@
 import UIKit
 
 class AddTaskViewController: UIViewController, UITextFieldDelegate {
-
+    
     var name : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         taskName.delegate = self
     }
+    
+    
     @IBOutlet weak var taskName: UITextField!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
