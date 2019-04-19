@@ -19,7 +19,6 @@ class GameView: UIViewController {
 
     @IBOutlet weak var progressBar: CustomProgressView!
     
-    
     @IBOutlet weak var taskTextLabel: UITextView!
     
     @IBOutlet weak var answerButton1: UIButton!
@@ -64,6 +63,7 @@ class GameView: UIViewController {
                 return 4
             }
         }
+        
         let resultOfAction = currentTask.tryAdvance(option: id)
         
         switch resultOfAction {
@@ -93,7 +93,6 @@ class GameView: UIViewController {
             sender.setTitleColor(UIColor(red: 0.96, green: 0.26, blue: 0.26, alpha: 1), for: .normal)
             endGame()
         }
-        
     }
     
     private func drawUIForCurrentTask() {
@@ -141,9 +140,7 @@ class GameView: UIViewController {
     
     private func endGameImmediately() {
         BannerPresenter.showEndGameBanner(score: score)
-        
         trySaveHighScore()
-        
         timer?.invalidate()
         self.navigationController?.popViewController(animated: true)
     }
@@ -157,5 +154,4 @@ class GameView: UIViewController {
             progressBar.progress = timeLimit/initialTime!
         }
     }
-    
 }
