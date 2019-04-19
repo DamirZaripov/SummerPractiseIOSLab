@@ -200,10 +200,10 @@ print(i)
             </objects>
             <point key="canvasLocation" x="1948.125" y="153.75"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nikita-->
         <scene sceneID="6Fv-JG-tfj">
             <objects>
-                <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="XYT-kD-ZeU" sceneMemberID="viewController">
+                <navigationController title="Nikita" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="XYT-kD-ZeU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vjw-Os-9Lu">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
