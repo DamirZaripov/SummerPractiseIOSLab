@@ -29,7 +29,6 @@
 		73BE895F225CF318003A8089 /* TaskProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE895E225CF318003A8089 /* TaskProviderImpl.swift */; };
 		73D1C2F822606B7D000ED525 /* StringReplaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1C2F722606B7D000ED525 /* StringReplaceExt.swift */; };
 		73D1C2FA2260A823000ED525 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D1C2F92260A823000ED525 /* backIcon.png */; };
-		73D1C2FD2260ACC0000ED525 /* GameFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1C2FC2260ACC0000ED525 /* GameFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +55,6 @@
 		73BE895E225CF318003A8089 /* TaskProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProviderImpl.swift; sourceTree = "<group>"; };
 		73D1C2F722606B7D000ED525 /* StringReplaceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringReplaceExt.swift; sourceTree = "<group>"; };
 		73D1C2F92260A823000ED525 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backIcon.png; sourceTree = "<group>"; };
-		73D1C2FC2260ACC0000ED525 /* GameFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlow.swift; sourceTree = "<group>"; };
 		7F2FED920F1A37C5EA7D63E8 /* Pods-SummerPractiseIOSLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerPractiseIOSLab.debug.xcconfig"; path = "Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab.debug.xcconfig"; sourceTree = "<group>"; };
 		B96FCE238CF69C1529FACB2B /* Pods-SummerPractiseIOSLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerPractiseIOSLab.release.xcconfig"; path = "Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab.release.xcconfig"; sourceTree = "<group>"; };
 		BB0F4AB285DF3B8F45B56FD3 /* Pods_SummerPractiseIOSLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummerPractiseIOSLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +143,6 @@
 		263A8B7D225BA9DF00C4B1FE /* Nikita */ = {
 			isa = PBXGroup;
 			children = (
-				73D1C2FB2260AC3B000ED525 /* game */,
 				73D1C2F622606B5A000ED525 /* extensions */,
 				73BE895B225CF2AF003A8089 /* service */,
 				73BE8957225CEE13003A8089 /* entity */,
@@ -233,14 +230,6 @@
 				73D1C2F722606B7D000ED525 /* StringReplaceExt.swift */,
 			);
 			path = extensions;
-			sourceTree = "<group>";
-		};
-		73D1C2FB2260AC3B000ED525 /* game */ = {
-			isa = PBXGroup;
-			children = (
-				73D1C2FC2260ACC0000ED525 /* GameFlow.swift */,
-			);
-			path = game;
 			sourceTree = "<group>";
 		};
 		A6AB2109BEFC3871A51449DA /* Frameworks */ = {
@@ -386,7 +375,6 @@
 				263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */,
 				73BE895F225CF318003A8089 /* TaskProviderImpl.swift in Sources */,
 				73BE8959225CEE21003A8089 /* Task.swift in Sources */,
-				73D1C2FD2260ACC0000ED525 /* GameFlow.swift in Sources */,
 				263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */,
 				73D1C2F822606B7D000ED525 /* StringReplaceExt.swift in Sources */,
 				73BE895D225CF2E2003A8089 /* ITaskProvider.swift in Sources */,
