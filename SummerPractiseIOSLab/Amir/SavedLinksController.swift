@@ -101,14 +101,12 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Add
     func isURL(value: String?) -> Bool {
-        guard let urlString = value, let url = URL(string: urlString) else {
-            return false
-        }
-        return UIApplication.shared.canOpenURL(url)
+        let regex = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
+        return ((value?.range(of: regex, options: .regularExpression)) != nil)
     }
     
     @IBAction func addBtnAction(_ sender: Any) {
-        if UIPasteboard.general.string == nil || !isURL(value: UIPasteboard.general.string) {
+        if !isURL(value: UIPasteboard.general.string) {
             warningAlert()
         } else {
             addingNewLinkAlert()
@@ -170,7 +168,7 @@ class SavedLinksController: UITableViewController, UITextFieldDelegate {
         
         alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: nil))
         alert.addAction(changeBtn)
-        changeBtn.isEnabled = false
+
         
         self.present(alert, animated: true, completion: nil)
         

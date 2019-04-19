@@ -25,10 +25,6 @@ class WebViewController: UIViewController {
         let url = URL(string: model.URL)
         webView.load(URLRequest(url: url!))
         self.navigationItem.title = model.title
-        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
-        self.navigationController?.toolbar.isHidden = true
-        toolbarItems = [refresh]
-        navigationController?.isToolbarHidden = false
     }
     
 }
