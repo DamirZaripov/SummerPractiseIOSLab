@@ -19,7 +19,7 @@ class BannerPresenter {
     }
     
     static func showEndGameBanner(score: Int) {
-        let banner = NotificationBanner(title: "Game Over", subtitle: "score: \(score)", style: .danger)
+        let banner = NotificationBanner(title: "Игра окончена", subtitle: "Итоговый счет: \(score)", style: .danger)
         banner.bannerHeight = 50.0
         banner.duration = 1.5
         banner.show(queuePosition: .front, bannerPosition: .bottom)
