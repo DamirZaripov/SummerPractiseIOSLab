@@ -46,18 +46,17 @@ class TaskTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "MMM d, h:mm a"
         let center = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
         
-        content.title = "Напоминание"
-        content.subtitle = "Летняя практика ios"
-        content.body = "Come to the main lobby for lunch "
+        content.title = "Летняя практика ios"
+        content.body = "Добро пожаловать в приложение!"
         content.sound = UNNotificationSound.default
         content.threadIdentifier = "local-notifications temp"
         
-        let date = Date(timeIntervalSinceNow: 5)
+        let date = Date(timeIntervalSinceNow: 3)
         
         let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: date)
         
@@ -69,6 +68,15 @@ class TaskTableViewController: UITableViewController {
             (error) in
             if error != nil{
                 print(error)
+                
+                /*if let content = notificationRequest.content.mutableCopy() as? UNMutableNotificationContent {
+                 // any changes
+                 content.title = "your new content's title"
+                 // create new notification
+                 let request = UNNotificationRequest(identifier: notificationRequest.identifier, content: content, trigger: notificationRequest.trigger)
+                 UNUserNotificationCenter.current().add(request)
+                 }*/
+                
             }
         }
 

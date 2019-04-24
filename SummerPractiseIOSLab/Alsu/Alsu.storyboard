@@ -61,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="-4006" y="721"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Выполнить-->
         <scene sceneID="cf1-sf-jkj">
             <objects>
                 <tableViewController id="1Jx-w0-IlO" customClass="TaskTableViewController" customModule="SummerPractiseIOSLab" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wek-NK-5Ds">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="33"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -104,7 +104,7 @@
                             <outlet property="delegate" destination="1Jx-w0-IlO" id="vOe-0i-STy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="2uo-RC-iwb">
+                    <navigationItem key="navigationItem" title="Выполнить" id="2uo-RC-iwb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BVC-ZK-WVY">
                             <connections>
                                 <segue destination="EXT-rB-J5y" kind="show" id="fm7-Dl-6e3"/>
