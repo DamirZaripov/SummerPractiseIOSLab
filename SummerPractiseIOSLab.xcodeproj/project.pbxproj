@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08222BD9211F99B5A494F42E /* Pods_SummerPractiseIOSLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0F4AB285DF3B8F45B56FD3 /* Pods_SummerPractiseIOSLab.framework */; };
 		263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8B67225BA7DB00C4B1FE /* AppDelegate.swift */; };
 		263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8B69225BA7DB00C4B1FE /* TabBarController.swift */; };
 		263A8B6D225BA7DB00C4B1FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B6B225BA7DB00C4B1FE /* Main.storyboard */; };
@@ -17,13 +18,25 @@
 		263A8B87225BAA4400C4B1FE /* Amir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B86225BAA4400C4B1FE /* Amir.storyboard */; };
 		263A8B8A225BAA5A00C4B1FE /* Alsu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */; };
 		263A8B8D225BACF500C4B1FE /* Albert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B8C225BACF500C4B1FE /* Albert.storyboard */; };
-		45F5E085226A56F400E16743 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5E084226A56F400E16743 /* ToDoListTableViewController.swift */; };
-		45F5E087226A572600E16743 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5E086226A572600E16743 /* AddTaskViewController.swift */; };
 		29135A5D226A51F6005B07A8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29135A5C226A51F5005B07A8 /* WebViewController.swift */; };
 		2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2956D17A2268FEAA0062C5F3 /* Extensions.swift */; };
 		29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E81367225CF277002A9ABD /* LinksTableViewCell.swift */; };
 		29E8136A225CF2A2002A9ABD /* SavedLinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E81369225CF2A2002A9ABD /* SavedLinksModel.swift */; };
 		29E8136C225CF2D0002A9ABD /* SavedLinksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */; };
+		45F5E085226A56F400E16743 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5E084226A56F400E16743 /* ToDoListTableViewController.swift */; };
+		45F5E087226A572600E16743 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5E086226A572600E16743 /* AddTaskViewController.swift */; };
+		7309C4B8226638EF001B2BFB /* BannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309C4B7226638EF001B2BFB /* BannerPresenter.swift */; };
+		73451068225CE34D0018C827 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73451067225CE34D0018C827 /* CustomProgressView.swift */; };
+		7345106A225CE3B40018C827 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73451069225CE3B40018C827 /* GameView.swift */; };
+		7345106C225CE3DF0018C827 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345106B225CE3DF0018C827 /* MainView.swift */; };
+		73BE8955225CEC25003A8089 /* bg_notxt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73BE8953225CEC25003A8089 /* bg_notxt.jpg */; };
+		73BE8956225CEC25003A8089 /* bgText.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73BE8954225CEC25003A8089 /* bgText.jpg */; };
+		73BE8959225CEE21003A8089 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE8958225CEE21003A8089 /* Task.swift */; };
+		73BE895D225CF2E2003A8089 /* ITaskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE895C225CF2E2003A8089 /* ITaskProvider.swift */; };
+		73BE895F225CF318003A8089 /* TaskProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE895E225CF318003A8089 /* TaskProviderImpl.swift */; };
+		73D1C2F822606B7D000ED525 /* StringReplaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1C2F722606B7D000ED525 /* StringReplaceExt.swift */; };
+		73D1C2FA2260A823000ED525 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D1C2F92260A823000ED525 /* backIcon.png */; };
+		73EB4E4C2270E42500EC10F2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB4E4B2270E42500EC10F2 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +52,28 @@
 		263A8B86225BAA4400C4B1FE /* Amir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amir.storyboard; sourceTree = "<group>"; };
 		263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alsu.storyboard; sourceTree = "<group>"; };
 		263A8B8C225BACF500C4B1FE /* Albert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Albert.storyboard; sourceTree = "<group>"; };
-		45F5E084226A56F400E16743 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
-		45F5E086226A572600E16743 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		29135A5C226A51F5005B07A8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2956D17A2268FEAA0062C5F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		29E81367225CF277002A9ABD /* LinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
 		29E81369225CF2A2002A9ABD /* SavedLinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksModel.swift; sourceTree = "<group>"; };
 		29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksController.swift; sourceTree = "<group>"; };
+		45F5E084226A56F400E16743 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
+		45F5E086226A572600E16743 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		7309C4B7226638EF001B2BFB /* BannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPresenter.swift; sourceTree = "<group>"; };
+		73451067225CE34D0018C827 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		73451069225CE3B40018C827 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		7345106B225CE3DF0018C827 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		73BE8953225CEC25003A8089 /* bg_notxt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_notxt.jpg; sourceTree = "<group>"; };
+		73BE8954225CEC25003A8089 /* bgText.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgText.jpg; sourceTree = "<group>"; };
+		73BE8958225CEE21003A8089 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		73BE895C225CF2E2003A8089 /* ITaskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITaskProvider.swift; sourceTree = "<group>"; };
+		73BE895E225CF318003A8089 /* TaskProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProviderImpl.swift; sourceTree = "<group>"; };
+		73D1C2F722606B7D000ED525 /* StringReplaceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringReplaceExt.swift; sourceTree = "<group>"; };
+		73D1C2F92260A823000ED525 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backIcon.png; sourceTree = "<group>"; };
+		73EB4E4B2270E42500EC10F2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7F2FED920F1A37C5EA7D63E8 /* Pods-SummerPractiseIOSLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerPractiseIOSLab.debug.xcconfig"; path = "Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab.debug.xcconfig"; sourceTree = "<group>"; };
+		B96FCE238CF69C1529FACB2B /* Pods-SummerPractiseIOSLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerPractiseIOSLab.release.xcconfig"; path = "Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab.release.xcconfig"; sourceTree = "<group>"; };
+		BB0F4AB285DF3B8F45B56FD3 /* Pods_SummerPractiseIOSLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummerPractiseIOSLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73EB4E4C2270E42500EC10F2 /* WebKit.framework in Frameworks */,
+				08222BD9211F99B5A494F42E /* Pods_SummerPractiseIOSLab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +94,8 @@
 			children = (
 				263A8B66225BA7DB00C4B1FE /* SummerPractiseIOSLab */,
 				263A8B65225BA7DB00C4B1FE /* Products */,
+				71155F5B60BE3020BDD0D44A /* Pods */,
+				A6AB2109BEFC3871A51449DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +165,11 @@
 		263A8B7D225BA9DF00C4B1FE /* Nikita */ = {
 			isa = PBXGroup;
 			children = (
+				73D1C2F622606B5A000ED525 /* extensions */,
+				73BE895B225CF2AF003A8089 /* service */,
+				73BE8957225CEE13003A8089 /* entity */,
+				73BE8952225CEC13003A8089 /* design */,
+				73451066225CE2190018C827 /* view */,
 				263A8B84225BAA3D00C4B1FE /* Nikita.storyboard */,
 			);
 			path = Nikita;
@@ -156,6 +193,78 @@
 			path = Albert;
 			sourceTree = "<group>";
 		};
+		71155F5B60BE3020BDD0D44A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F2FED920F1A37C5EA7D63E8 /* Pods-SummerPractiseIOSLab.debug.xcconfig */,
+				B96FCE238CF69C1529FACB2B /* Pods-SummerPractiseIOSLab.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		73451066225CE2190018C827 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				73BE895A225CF1FE003A8089 /* ui */,
+				73451069225CE3B40018C827 /* GameView.swift */,
+				7345106B225CE3DF0018C827 /* MainView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		73BE8952225CEC13003A8089 /* design */ = {
+			isa = PBXGroup;
+			children = (
+				73D1C2F92260A823000ED525 /* backIcon.png */,
+				73BE8953225CEC25003A8089 /* bg_notxt.jpg */,
+				73BE8954225CEC25003A8089 /* bgText.jpg */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		73BE8957225CEE13003A8089 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				73BE8958225CEE21003A8089 /* Task.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		73BE895A225CF1FE003A8089 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				73451067225CE34D0018C827 /* CustomProgressView.swift */,
+				7309C4B7226638EF001B2BFB /* BannerPresenter.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		73BE895B225CF2AF003A8089 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				73BE895C225CF2E2003A8089 /* ITaskProvider.swift */,
+				73BE895E225CF318003A8089 /* TaskProviderImpl.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		73D1C2F622606B5A000ED525 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73D1C2F722606B7D000ED525 /* StringReplaceExt.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		A6AB2109BEFC3871A51449DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73EB4E4B2270E42500EC10F2 /* WebKit.framework */,
+				BB0F4AB285DF3B8F45B56FD3 /* Pods_SummerPractiseIOSLab.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,9 +272,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 263A8B76225BA7DC00C4B1FE /* Build configuration list for PBXNativeTarget "SummerPractiseIOSLab" */;
 			buildPhases = (
+				0937B4C1B172497392A8E14B /* [CP] Check Pods Manifest.lock */,
 				263A8B60225BA7DB00C4B1FE /* Sources */,
 				263A8B61225BA7DB00C4B1FE /* Frameworks */,
 				263A8B62225BA7DB00C4B1FE /* Resources */,
+				E91A1B521A1962569C556B9E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,7 +329,10 @@
 				263A8B85225BAA3D00C4B1FE /* Nikita.storyboard in Resources */,
 				263A8B8D225BACF500C4B1FE /* Albert.storyboard in Resources */,
 				263A8B8A225BAA5A00C4B1FE /* Alsu.storyboard in Resources */,
+				73BE8955225CEC25003A8089 /* bg_notxt.jpg in Resources */,
 				263A8B72225BA7DC00C4B1FE /* LaunchScreen.storyboard in Resources */,
+				73D1C2FA2260A823000ED525 /* backIcon.png in Resources */,
+				73BE8956225CEC25003A8089 /* bgText.jpg in Resources */,
 				263A8B6F225BA7DC00C4B1FE /* Assets.xcassets in Resources */,
 				263A8B6D225BA7DB00C4B1FE /* Main.storyboard in Resources */,
 				263A8B81225BAA2100C4B1FE /* Zhenya.storyboard in Resources */,
@@ -227,12 +341,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0937B4C1B172497392A8E14B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummerPractiseIOSLab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E91A1B521A1962569C556B9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		263A8B60225BA7DB00C4B1FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */,
+				73BE895F225CF318003A8089 /* TaskProviderImpl.swift in Sources */,
+				73BE8959225CEE21003A8089 /* Task.swift in Sources */,
+				73D1C2F822606B7D000ED525 /* StringReplaceExt.swift in Sources */,
+				73BE895D225CF2E2003A8089 /* ITaskProvider.swift in Sources */,
+				7345106A225CE3B40018C827 /* GameView.swift in Sources */,
+				7345106C225CE3DF0018C827 /* MainView.swift in Sources */,
+				7309C4B8226638EF001B2BFB /* BannerPresenter.swift in Sources */,
+				73451068225CE34D0018C827 /* CustomProgressView.swift in Sources */,
 				45F5E087226A572600E16743 /* AddTaskViewController.swift in Sources */,
 				45F5E085226A56F400E16743 /* ToDoListTableViewController.swift in Sources */,
 				29E8136A225CF2A2002A9ABD /* SavedLinksModel.swift in Sources */,
@@ -384,17 +557,18 @@
 		};
 		263A8B77225BA7DC00C4B1FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F2FED920F1A37C5EA7D63E8 /* Pods-SummerPractiseIOSLab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2992GT752;
+				DEVELOPMENT_TEAM = 593ZV4B3B7;
 				INFOPLIST_FILE = SummerPractiseIOSLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = summer.pract;
+				PRODUCT_BUNDLE_IDENTIFIER = summer.practice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -404,17 +578,18 @@
 		};
 		263A8B78225BA7DC00C4B1FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B96FCE238CF69C1529FACB2B /* Pods-SummerPractiseIOSLab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2992GT752;
+				DEVELOPMENT_TEAM = 593ZV4B3B7;
 				INFOPLIST_FILE = SummerPractiseIOSLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = summer.pract;
+				PRODUCT_BUNDLE_IDENTIFIER = summer.practice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
