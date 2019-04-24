@@ -19,6 +19,11 @@
 		263A8B8D225BACF500C4B1FE /* Albert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B8C225BACF500C4B1FE /* Albert.storyboard */; };
 		45F5E085226A56F400E16743 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5E084226A56F400E16743 /* ToDoListTableViewController.swift */; };
 		45F5E087226A572600E16743 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5E086226A572600E16743 /* AddTaskViewController.swift */; };
+		29135A5D226A51F6005B07A8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29135A5C226A51F5005B07A8 /* WebViewController.swift */; };
+		2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2956D17A2268FEAA0062C5F3 /* Extensions.swift */; };
+		29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E81367225CF277002A9ABD /* LinksTableViewCell.swift */; };
+		29E8136A225CF2A2002A9ABD /* SavedLinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E81369225CF2A2002A9ABD /* SavedLinksModel.swift */; };
+		29E8136C225CF2D0002A9ABD /* SavedLinksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		263A8B8C225BACF500C4B1FE /* Albert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Albert.storyboard; sourceTree = "<group>"; };
 		45F5E084226A56F400E16743 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
 		45F5E086226A572600E16743 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		29135A5C226A51F5005B07A8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2956D17A2268FEAA0062C5F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		29E81367225CF277002A9ABD /* LinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
+		29E81369225CF2A2002A9ABD /* SavedLinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksModel.swift; sourceTree = "<group>"; };
+		29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				263A8B86225BAA4400C4B1FE /* Amir.storyboard */,
+				29E81369225CF2A2002A9ABD /* SavedLinksModel.swift */,
+				29E8136B225CF2D0002A9ABD /* SavedLinksController.swift */,
+				29135A5C226A51F5005B07A8 /* WebViewController.swift */,
+				29E81367225CF277002A9ABD /* LinksTableViewCell.swift */,
+				2956D17A2268FEAA0062C5F3 /* Extensions.swift */,
 			);
 			path = Amir;
 			sourceTree = "<group>";
@@ -219,8 +234,13 @@
 			files = (
 				263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */,
 				45F5E087226A572600E16743 /* AddTaskViewController.swift in Sources */,
-				263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */,
 				45F5E085226A56F400E16743 /* ToDoListTableViewController.swift in Sources */,
+				29E8136A225CF2A2002A9ABD /* SavedLinksModel.swift in Sources */,
+				29E8136C225CF2D0002A9ABD /* SavedLinksController.swift in Sources */,
+				263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */,
+				29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */,
+				2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */,
+				29135A5D226A51F6005B07A8 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,14 +386,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2992GT752;
 				INFOPLIST_FILE = SummerPractiseIOSLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.kpfu.SummerPractiseIOSLab;
+				PRODUCT_BUNDLE_IDENTIFIER = summer.pract;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,14 +406,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2992GT752;
 				INFOPLIST_FILE = SummerPractiseIOSLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.kpfu.SummerPractiseIOSLab;
+				PRODUCT_BUNDLE_IDENTIFIER = summer.pract;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
