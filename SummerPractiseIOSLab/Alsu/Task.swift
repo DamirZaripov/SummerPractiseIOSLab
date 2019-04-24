@@ -16,4 +16,8 @@ class Task : Codable {
         taskText = text
         self.date = date
     }
+    
+    func equals(to: Task) -> Bool {
+        return self.taskText == to.taskText && self.date == to.date
+    }
 }

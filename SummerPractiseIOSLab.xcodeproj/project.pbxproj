@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23F60A48226DEED500C79F1E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A47226DEED500C79F1E /* NotificationViewController.swift */; };
+		23F60A4A226E078100C79F1E /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A49226E078100C79F1E /* TaskTableViewController.swift */; };
+		23F60A4C226E081E00C79F1E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A4B226E081E00C79F1E /* Task.swift */; };
+		23F60A4E226E094D00C79F1E /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A4D226E094D00C79F1E /* TaskTableViewCell.swift */; };
 		263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8B67225BA7DB00C4B1FE /* AppDelegate.swift */; };
 		263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8B69225BA7DB00C4B1FE /* TabBarController.swift */; };
 		263A8B6D225BA7DB00C4B1FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B6B225BA7DB00C4B1FE /* Main.storyboard */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23F60A47226DEED500C79F1E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		23F60A49226E078100C79F1E /* TaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		23F60A4B226E081E00C79F1E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		23F60A4D226E094D00C79F1E /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		263A8B64225BA7DB00C4B1FE /* SummerPractiseIOSLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerPractiseIOSLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263A8B67225BA7DB00C4B1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		263A8B69225BA7DB00C4B1FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -99,6 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */,
+				23F60A47226DEED500C79F1E /* NotificationViewController.swift */,
+				23F60A49226E078100C79F1E /* TaskTableViewController.swift */,
+				23F60A4B226E081E00C79F1E /* Task.swift */,
+				23F60A4D226E094D00C79F1E /* TaskTableViewCell.swift */,
 			);
 			path = Alsu;
 			sourceTree = "<group>";
@@ -167,6 +179,7 @@
 				TargetAttributes = {
 					263A8B63225BA7DB00C4B1FE = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -211,7 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F60A48226DEED500C79F1E /* NotificationViewController.swift in Sources */,
 				263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */,
+				23F60A4E226E094D00C79F1E /* TaskTableViewCell.swift in Sources */,
+				23F60A4C226E081E00C79F1E /* Task.swift in Sources */,
+				23F60A4A226E078100C79F1E /* TaskTableViewController.swift in Sources */,
 				263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SummerPractiseIOSLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -366,6 +384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.kpfu.SummerPractiseIOSLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -375,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SummerPractiseIOSLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
