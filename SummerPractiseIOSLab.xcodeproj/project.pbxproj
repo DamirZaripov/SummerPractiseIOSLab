@@ -427,7 +427,7 @@
 				29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */,
 				2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */,
 				29135A5D226A51F6005B07A8 /* WebViewController.swift in Sources */,
-				);
+				
 				);
 
 			runOnlyForDeploymentPostprocessing = 0;
