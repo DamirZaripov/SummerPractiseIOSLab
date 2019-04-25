@@ -7,14 +7,15 @@
 //
 
 import UIKit
-import UserNotifications
+//import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate//, UNUserNotificationCenterDelegate
+   {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+ /*   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let center = UNUserNotificationCenter.current()
         
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNNotification, withCompletionHandler completionHandler: @escaping
         (UNNotificationPresentationOptions) -> Void){
         completionHandler([.alert, .badge, .sound])
-    }
+    }*/
     
     
     func applicationWillResignActive(_ application: UIApplication) {

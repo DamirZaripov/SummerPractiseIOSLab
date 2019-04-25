@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import UserNotifications
 
 var content: [Task]?
 
 class TaskTableViewController: UITableViewController {
+    @IBOutlet weak var myTableView: UITableView!
     var dateFormatter: DateFormatter = DateFormatter()
     
     func ensureUpToDate() {
@@ -47,39 +47,8 @@ class TaskTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateFormat = "MMM d, h:mm a"
-        let center = UNUserNotificationCenter.current()
-        
-        let content = UNMutableNotificationContent()
-        
-        content.title = "Летняя практика ios"
-        content.body = "Добро пожаловать в приложение!"
-        content.sound = UNNotificationSound.default
-        content.threadIdentifier = "local-notifications temp"
-        
-        let date = Date(timeIntervalSinceNow: 3)
-        
-        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: date)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "content", content: content, trigger: trigger)
-        
-        center.add(request){
-            (error) in
-            if error != nil{
-                print(error)
-                
-                /*if let content = notificationRequest.content.mutableCopy() as? UNMutableNotificationContent {
-                 // any changes
-                 content.title = "your new content's title"
-                 // create new notification
-                 let request = UNNotificationRequest(identifier: notificationRequest.identifier, content: content, trigger: notificationRequest.trigger)
-                 UNUserNotificationCenter.current().add(request)
-                 }*/
-                
-            }
-        }
-
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 160
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,11 +70,10 @@ class TaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskTableCell", for: indexPath) as! TaskTableViewCell
-        
-        cell.taskNameLabel.text = content![indexPath.row].taskText
-        cell.dateLabel.text = dateFormatter.string(from: content![indexPath.row].date)
-        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "taskTableCell", for: indexPath) as! TaskTableViewCell
+            cell.taskNameLabel.text = content![indexPath.row].taskText
+            cell.dateLabel.text = dateFormatter.string(from: content![indexPath.row].date)        
+        cell.taskNameLabel?.numberOfLines = 0
         return cell
     }
 
@@ -115,8 +83,6 @@ class TaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125
+        return 150
     }
-
-
 }

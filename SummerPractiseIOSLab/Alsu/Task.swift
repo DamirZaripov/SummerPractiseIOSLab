@@ -13,7 +13,9 @@ class Task : Codable {
     var date: Date
     
     init(text: String, date: Date) {
-        taskText = text
+        if (text == ""){
+            taskText = "Без названия"}
+        else  {taskText = text}
         self.date = date
     }
     
