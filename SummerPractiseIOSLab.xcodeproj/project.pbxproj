@@ -17,6 +17,8 @@
 		263A8B87225BAA4400C4B1FE /* Amir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B86225BAA4400C4B1FE /* Amir.storyboard */; };
 		263A8B8A225BAA5A00C4B1FE /* Alsu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */; };
 		263A8B8D225BACF500C4B1FE /* Albert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B8C225BACF500C4B1FE /* Albert.storyboard */; };
+		DEB50D8E2271F05200EF059A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB50D8D2271F05200EF059A /* ViewController.swift */; };
+		DEB50D902271F06F00EF059A /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB50D8F2271F06F00EF059A /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		263A8B86225BAA4400C4B1FE /* Amir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amir.storyboard; sourceTree = "<group>"; };
 		263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alsu.storyboard; sourceTree = "<group>"; };
 		263A8B8C225BACF500C4B1FE /* Albert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Albert.storyboard; sourceTree = "<group>"; };
+		DEB50D8D2271F05200EF059A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEB50D8F2271F06F00EF059A /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				263A8B8C225BACF500C4B1FE /* Albert.storyboard */,
+				DEB50D8D2271F05200EF059A /* ViewController.swift */,
+				DEB50D8F2271F06F00EF059A /* LocationSearchTable.swift */,
 			);
 			path = Albert;
 			sourceTree = "<group>";
@@ -211,8 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB50D8E2271F05200EF059A /* ViewController.swift in Sources */,
 				263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */,
 				263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */,
+				DEB50D902271F06F00EF059A /* LocationSearchTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
