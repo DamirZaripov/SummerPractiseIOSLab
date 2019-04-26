@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08222BD9211F99B5A494F42E /* Pods_SummerPractiseIOSLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0F4AB285DF3B8F45B56FD3 /* Pods_SummerPractiseIOSLab.framework */; };
 		23F60A48226DEED500C79F1E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A47226DEED500C79F1E /* NotificationViewController.swift */; };
 		23F60A4A226E078100C79F1E /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A49226E078100C79F1E /* TaskTableViewController.swift */; };
-		23F60A4C226E081E00C79F1E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A4B226E081E00C79F1E /* Task.swift */; };
+		23F60A4C226E081E00C79F1E /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A4B226E081E00C79F1E /* TaskEntry.swift */; };
 		23F60A4E226E094D00C79F1E /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F60A4D226E094D00C79F1E /* TaskTableViewCell.swift */; };
-		08222BD9211F99B5A494F42E /* Pods_SummerPractiseIOSLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0F4AB285DF3B8F45B56FD3 /* Pods_SummerPractiseIOSLab.framework */; };
 		263A8B68225BA7DB00C4B1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8B67225BA7DB00C4B1FE /* AppDelegate.swift */; };
 		263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8B69225BA7DB00C4B1FE /* TabBarController.swift */; };
 		263A8B6D225BA7DB00C4B1FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B6B225BA7DB00C4B1FE /* Main.storyboard */; };
@@ -22,10 +22,6 @@
 		263A8B87225BAA4400C4B1FE /* Amir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B86225BAA4400C4B1FE /* Amir.storyboard */; };
 		263A8B8A225BAA5A00C4B1FE /* Alsu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */; };
 		263A8B8D225BACF500C4B1FE /* Albert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8B8C225BACF500C4B1FE /* Albert.storyboard */; };
-
-		DEB50D8E2271F05200EF059A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB50D8D2271F05200EF059A /* ViewController.swift */; };
-		DEB50D902271F06F00EF059A /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB50D8F2271F06F00EF059A /* LocationSearchTable.swift */; };
-
 		29135A5D226A51F6005B07A8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29135A5C226A51F5005B07A8 /* WebViewController.swift */; };
 		2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2956D17A2268FEAA0062C5F3 /* Extensions.swift */; };
 		29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E81367225CF277002A9ABD /* LinksTableViewCell.swift */; };
@@ -45,13 +41,14 @@
 		73D1C2F822606B7D000ED525 /* StringReplaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1C2F722606B7D000ED525 /* StringReplaceExt.swift */; };
 		73D1C2FA2260A823000ED525 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D1C2F92260A823000ED525 /* backIcon.png */; };
 		73EB4E4C2270E42500EC10F2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB4E4B2270E42500EC10F2 /* WebKit.framework */; };
-
+		DEB50D8E2271F05200EF059A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB50D8D2271F05200EF059A /* ViewController.swift */; };
+		DEB50D902271F06F00EF059A /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB50D8F2271F06F00EF059A /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23F60A47226DEED500C79F1E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		23F60A49226E078100C79F1E /* TaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
-		23F60A4B226E081E00C79F1E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		23F60A4B226E081E00C79F1E /* TaskEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntry.swift; sourceTree = "<group>"; };
 		23F60A4D226E094D00C79F1E /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		263A8B64225BA7DB00C4B1FE /* SummerPractiseIOSLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerPractiseIOSLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263A8B67225BA7DB00C4B1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,10 +62,6 @@
 		263A8B86225BAA4400C4B1FE /* Amir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amir.storyboard; sourceTree = "<group>"; };
 		263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alsu.storyboard; sourceTree = "<group>"; };
 		263A8B8C225BACF500C4B1FE /* Albert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Albert.storyboard; sourceTree = "<group>"; };
-
-		DEB50D8D2271F05200EF059A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DEB50D8F2271F06F00EF059A /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
-
 		29135A5C226A51F5005B07A8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2956D17A2268FEAA0062C5F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		29E81367225CF277002A9ABD /* LinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
@@ -91,6 +84,8 @@
 		7F2FED920F1A37C5EA7D63E8 /* Pods-SummerPractiseIOSLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerPractiseIOSLab.debug.xcconfig"; path = "Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab.debug.xcconfig"; sourceTree = "<group>"; };
 		B96FCE238CF69C1529FACB2B /* Pods-SummerPractiseIOSLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerPractiseIOSLab.release.xcconfig"; path = "Target Support Files/Pods-SummerPractiseIOSLab/Pods-SummerPractiseIOSLab.release.xcconfig"; sourceTree = "<group>"; };
 		BB0F4AB285DF3B8F45B56FD3 /* Pods_SummerPractiseIOSLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummerPractiseIOSLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB50D8D2271F05200EF059A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEB50D8F2271F06F00EF059A /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +159,7 @@
 				263A8B89225BAA5A00C4B1FE /* Alsu.storyboard */,
 				23F60A47226DEED500C79F1E /* NotificationViewController.swift */,
 				23F60A49226E078100C79F1E /* TaskTableViewController.swift */,
-				23F60A4B226E081E00C79F1E /* Task.swift */,
+				23F60A4B226E081E00C79F1E /* TaskEntry.swift */,
 				23F60A4D226E094D00C79F1E /* TaskTableViewCell.swift */,
 			);
 			path = Alsu;
@@ -424,7 +419,7 @@
 				23F60A48226DEED500C79F1E /* NotificationViewController.swift in Sources */,
 				263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */,
 				23F60A4E226E094D00C79F1E /* TaskTableViewCell.swift in Sources */,
-				23F60A4C226E081E00C79F1E /* Task.swift in Sources */,
+				23F60A4C226E081E00C79F1E /* TaskEntry.swift in Sources */,
 				23F60A4A226E078100C79F1E /* TaskTableViewController.swift in Sources */,
 				DEB50D8E2271F05200EF059A /* ViewController.swift in Sources */,
 				263A8B6A225BA7DB00C4B1FE /* TabBarController.swift in Sources */,
@@ -445,9 +440,7 @@
 				29E81368225CF277002A9ABD /* LinksTableViewCell.swift in Sources */,
 				2956D17B2268FEAA0062C5F3 /* Extensions.swift in Sources */,
 				29135A5D226A51F6005B07A8 /* WebViewController.swift in Sources */,
-				
-				);
-
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
@@ -604,8 +597,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = summer.practice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

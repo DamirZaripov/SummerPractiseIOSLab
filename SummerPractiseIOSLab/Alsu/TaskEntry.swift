@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Task : Codable {
+class TaskEntry : Codable {
     var taskText: String
     var date: Date
     
@@ -19,7 +19,7 @@ class Task : Codable {
         self.date = date
     }
     
-    func equals(to: Task) -> Bool {
+    func equals(to: TaskEntry) -> Bool {
         return self.taskText == to.taskText && self.date == to.date
     }
 }

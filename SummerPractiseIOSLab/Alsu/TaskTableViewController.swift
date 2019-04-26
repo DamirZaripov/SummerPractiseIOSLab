@@ -8,7 +8,7 @@
 
 import UIKit
 
-var content: [Task]?
+var content: [TaskEntry]?
 
 class TaskTableViewController: UITableViewController {
     @IBOutlet weak var myTableView: UITableView!
@@ -54,10 +54,10 @@ class TaskTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let data = UserDefaults.standard.data(forKey: "contentData") {
-            content = try! JSONDecoder().decode([Task].self, from: data)
+            content = try! JSONDecoder().decode([TaskEntry].self, from: data)
         }
         else {
-            content = [Task]()
+            content = [TaskEntry]()
         }
         ensureUpToDate()
         self.tableView.reloadData()

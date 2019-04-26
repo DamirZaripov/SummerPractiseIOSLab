@@ -26,7 +26,7 @@ class NotificationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveButtonPressed(_ sender: Any) {
         if let text = textEdit.text {
             let date = datePicker.date
-            content?.append(Task(text: text, date: date))
+            content?.append(TaskEntry(text: text, date: date))
             let contentData = try! JSONEncoder().encode(content)
             UserDefaults.standard.set(contentData, forKey: "contentData")
         }
