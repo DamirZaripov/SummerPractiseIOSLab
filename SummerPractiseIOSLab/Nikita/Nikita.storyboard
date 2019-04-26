@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZJ-NB-KlA">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XYT-kD-ZeU">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,17 +13,220 @@
         <!--Nikita-->
         <scene sceneID="JAA-PX-waa">
             <objects>
-                <viewController title="Nikita" id="cZJ-NB-KlA" sceneMemberID="viewController">
+                <viewController title="Nikita" id="cZJ-NB-KlA" customClass="MainView" customModule="SummerPractiseIOSLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KEI-b6-cUD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgText.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="S84-iS-4eF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajE-Bf-DiG">
+                                <rect key="frame" x="99" y="255" width="122" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.2040971033" alpha="0.50350492290000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title="START"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="PXU-49-ASI" kind="show" identifier="gameStartSegue" id="Nik-4j-Wr7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Highscore : 52" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iec-QU-Jws">
+                                <rect key="frame" x="20" y="508" width="280" height="40"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FdO-8M-qym" firstAttribute="trailing" secondItem="iec-QU-Jws" secondAttribute="trailing" constant="20" id="Ddq-xk-6qz"/>
+                            <constraint firstItem="FdO-8M-qym" firstAttribute="bottom" secondItem="iec-QU-Jws" secondAttribute="bottom" constant="20" id="Ktm-y8-CEs"/>
+                            <constraint firstItem="iec-QU-Jws" firstAttribute="leading" secondItem="FdO-8M-qym" secondAttribute="leading" constant="20" id="kMH-Kx-RK2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FdO-8M-qym"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MX2-R7-Npr">
+                        <barButtonItem key="backBarButtonItem" title=" " id="VEm-gQ-V1A"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="highscoreLabel" destination="iec-QU-Jws" id="xi9-j6-WCZ"/>
+                        <outlet property="startButton" destination="ajE-Bf-DiG" id="A9p-Sr-CdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AV4-9J-twn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="156"/>
+            <point key="canvasLocation" x="1066.6666666666667" y="154.89130434782609"/>
+        </scene>
+        <!--Game View-->
+        <scene sceneID="MpQ-Bo-VAM">
+            <objects>
+                <viewController storyboardIdentifier="GameView" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PXU-49-ASI" customClass="GameView" customModule="SummerPractiseIOSLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ZK-a2-SYX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_notxt.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3qz-YS-cqN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1As-lb-mSH">
+                                <rect key="frame" x="22" y="439" width="122" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.20000000000000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title=" "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="B4z-PL-k8i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGq-GY-1kg">
+                                <rect key="frame" x="176" y="360" width="121" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.20000000000000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title=" "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="Y3a-Ju-tk6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etE-RW-pqa">
+                                <rect key="frame" x="22" y="360" width="122" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.20000000000000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title=" "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="aKg-NU-7rm"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="Le1-YM-TEO" customClass="CustomProgressView" customModule="SummerPractiseIOSLab" customModuleProvider="target">
+                                <rect key="frame" x="40" y="36" width="240" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="xJP-x2-TPE"/>
+                                </constraints>
+                                <color key="progressTintColor" white="0.20000000000000001" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeH-A6-tZd">
+                                <rect key="frame" x="176" y="439" width="122" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.20000000000000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title=" "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleButtonPressed:" destination="PXU-49-ASI" eventType="touchUpInside" id="BTh-a1-S49"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Времени осталось:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhW-xO-KIv">
+                                <rect key="frame" x="112" y="18" width="96" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXl-Vc-WgY">
+                                <rect key="frame" x="28" y="171" width="264" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">var i = 2
+repeat {
+    i *= i * 2
+} while i &lt; 100
+print(i)
+Что выведет этот код?</string>
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="18" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Le1-YM-TEO" firstAttribute="top" secondItem="uhW-xO-KIv" secondAttribute="bottom" constant="1" id="RPv-Ie-ieQ"/>
+                            <constraint firstItem="Le1-YM-TEO" firstAttribute="top" secondItem="3ZK-a2-SYX" secondAttribute="top" constant="36" id="cNX-Ba-5aG"/>
+                            <constraint firstItem="Le1-YM-TEO" firstAttribute="centerX" secondItem="3ZK-a2-SYX" secondAttribute="centerX" id="jRm-5O-WKf"/>
+                            <constraint firstItem="lcE-4Z-b9g" firstAttribute="trailing" secondItem="Le1-YM-TEO" secondAttribute="trailing" constant="40" id="opU-Fy-b40"/>
+                            <constraint firstItem="Le1-YM-TEO" firstAttribute="centerX" secondItem="uhW-xO-KIv" secondAttribute="centerX" id="q3q-DC-c7a"/>
+                            <constraint firstItem="uhW-xO-KIv" firstAttribute="top" secondItem="3ZK-a2-SYX" secondAttribute="top" constant="18" id="zZB-fJ-R5h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lcE-4Z-b9g"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerButton1" destination="etE-RW-pqa" id="iJ5-1o-Z1O"/>
+                        <outlet property="answerButton2" destination="kGq-GY-1kg" id="Cqu-tX-ygO"/>
+                        <outlet property="answerButton3" destination="1As-lb-mSH" id="vD5-fP-9Hw"/>
+                        <outlet property="answerButton4" destination="TeH-A6-tZd" id="NvT-tX-euJ"/>
+                        <outlet property="progressBar" destination="Le1-YM-TEO" id="e8u-Lf-eXI"/>
+                        <outlet property="taskTextLabel" destination="rXl-Vc-WgY" id="rli-pF-mUE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ea-zO-OBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948.125" y="153.75"/>
+        </scene>
+        <!--Nikita-->
+        <scene sceneID="6Fv-JG-tfj">
+            <objects>
+                <navigationController title="Nikita" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="XYT-kD-ZeU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vjw-Os-9Lu">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.25089183790000003" alpha="0.72265625" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.19772938070821922" alpha="0.7481003852739726" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cZJ-NB-KlA" kind="relationship" relationship="rootViewController" id="Yad-EE-hVB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4F-EM-SJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.375" y="155.28169014084509"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bgText.jpg" width="1242" height="2208"/>
+        <image name="bg_notxt.jpg" width="1242" height="2208"/>
+    </resources>
 </document>
